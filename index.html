@@ -38,14 +38,14 @@
           <h2>Adicionar/Editar Paleta:</h2>
           <input type="hidden" id="id" />
         </div>
-        <button id="idPaletaButton" onclick="findPaletaById()">Escolher</button>
+        <button id="idPaletaButton">Escolher</button>
       </div>
       <div id="paletaEscolhida">
       </div>
     </div>
     <!-- MODAL & CADASTRAR UMA PALETA-->
     <section class="button-modal-create">
-      <button type="button" class="default-button" onclick="abrirModal()">Cadastrar Paleta</button>
+      <button type="button" class="default-button" id="btnCadastrarPaleta">Cadastrar Paleta</button>
     </section>
 
     <section class="modal-overlay" id="overlay">
@@ -53,7 +53,7 @@
 
         <div class="modal-header">
           <h2 id="title-header-modal">Cadastrar uma paleta</h2>
-          <a onclick="fecharModalCadastro()" class="close-modal">x</a>
+          <a id="closeModal" class="close-modal">x</a>
         </div>
 
         <div class="modal-body">
@@ -63,7 +63,7 @@
             <input type="number" name="preco" id="preco" placeholder="Preço da Paleta">
             <textarea type="text" name="descricao" id="descricao" placeholder="Descrição da Paleta" rows="5"></textarea>
             <input type="text" name="foto" id="foto" placeholder="Link da Foto da Paleta">
-            <button id="button-form-modal" onclick="submitPaleta()">Cadastrar</button>
+            <button id="button-form-modal">Cadastrar</button>
           </div>
         </div>
       </div>
@@ -76,6 +76,12 @@
       </div>
     </div>
   </div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+  </div>
+
   <script src="https://kit.fontawesome.com/8e915e4b65.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>

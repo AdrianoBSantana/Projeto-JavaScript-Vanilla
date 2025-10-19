@@ -1,10 +1,53 @@
-
-* {
-    margin: 0;
-    padding: 0;
-   
+:root {
+  /* Cores principais */
+  --color-gradient-1: #A85CF9;
+  --color-gradient-2: #5534A5;
+  --color-gradient-3: #4B7BE5;
+  --color-gradient-4: #6FDFDF;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-price: rgb(113, 5, 255);
+  --color-price-border: rgba(255, 0, 212, 0.377);
+  --color-delete: #ff006a6c;
+  --color-delete-hover: rgba(255, 0, 128, 0.74);
+  --color-edit: rgba(17, 0, 255, 0.219);
+  --color-edit-hover: rgba(0, 0, 255, 0.425);
+  
+  /* Tamanhos */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  --border-radius-sm: 0.2rem;
+  --border-radius-md: 0.3rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 10px;
+  --border-radius-full: 50%;
+  
+  /* Transparências */
+  --bg-glass: rgba(255, 255, 255, 0.3);
+  --bg-glass-dark: rgba(255, 255, 255, 0.13);
+  --bg-modal-overlay: #00000050;
+  --bg-loading-overlay: rgba(0, 0, 0, 0.7);
+  
+  /* Sombras */
+  --shadow-default: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  --shadow-button: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
+  
+  /* Fontes */
+  --font-family-default: "desc";
+  --font-family-logo: "love";
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5em;
+  --font-size-xl: 2.5em;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body,
 html {
@@ -13,19 +56,19 @@ html {
   width: 100%;
   min-height: 100vh;
   overflow: auto;
-  background-color: rgb(255, 255, 255);
-  font-family: "desc";
+  background-color: var(--color-white);
+  font-family: var(--font-family-default);
 }
 
 .Home {
   position: relative;
-  background: linear-gradient(45deg,#A85CF9,#5534A5,#4B7BE5,#6FDFDF);
+  background: linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-4));
   min-height: calc(100vh - 60px);
   margin: 15px;
   padding: 15px;
   border-radius: 20px;
-  color: black;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  color: var(--color-black);
+  box-shadow: var(--shadow-default);
   background-size: 300% 300%;
   animation: colors 15s ease infinite;
 }
@@ -82,9 +125,9 @@ html {
 
 .PaletaCardItem,
 .PaletaListaItem {
-  font-family: "desc";
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  font-family: var(--font-family-default);
+  background: var(--bg-glass);
+  border-radius: var(--border-radius-xl);
   padding: 10px;
   width: 315px;
   display: flex;
@@ -126,14 +169,15 @@ html {
 
 .PaletaCardItem__preco,
 .PaletaListaItem__preco {
-  width : 60px;
+  width: 60px;
   height: 50px;
-  color: rgb(113, 5, 255);
-  border: solid rgba(255, 0, 212, 0.377) 1px;
-  border-radius: 50%;
+  color: var(--color-price);
+  border: solid var(--color-price-border) 1px;
+  border-radius: var(--border-radius-full);
   align-items: center;
   display: flex;
-  text-align: center;}
+  text-align: center;
+}
 
 .PaletaListaItem__foto {
   height: 150px;
@@ -144,38 +188,35 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: var(--spacing-xl);
 }
 
 #idPaleta {
-  padding: 0.5rem;
+  padding: var(--spacing-sm);
   width: 315px;
   border: none;
-  border-radius: 0.2rem;
-  
+  border-radius: var(--border-radius-sm);
 }
 
 #idPaletaButton {
-  
-  
-  padding: 0.4rem;
-  color: #ffffff;
+  padding: var(--spacing-xs);
+  color: var(--color-white);
   font-weight: 600;
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius-sm);
   width: 330px;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-sm);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-size: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
-	background-color: rgba(255, 255, 255, 0.13);
-	backdrop-filter: blur(10px);
-	border: 1px rgb(255, 255, 255, 0.1) solid;
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-button);
+  background-color: var(--bg-glass-dark);
+  backdrop-filter: blur(10px);
+  border: 1px rgb(255, 255, 255, 0.1) solid;
 }
 
 #idPaletaButton:hover {
   background-color: #9400d360;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 #paleta-escolhida-input-espaco {
@@ -202,8 +243,8 @@ html {
 .Logo {
   display: flex;
   align-items: center;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius-xl);
+  background-color: var(--bg-glass);
   width: 340px;
   height: 45px;
 }
@@ -211,9 +252,9 @@ html {
 .Logo__titulo {
   position: absolute;
   left: 55px;
-  font-family: "love";
+  font-family: var(--font-family-logo);
   font-weight: 700;
-  font-size: 2.5em;
+  font-size: var(--font-size-xl);
 }
 
 .Logo__icone {
@@ -277,30 +318,30 @@ html {
 .default-button {
   position: absolute;
   top: 92px;
-  padding: 0.4rem;
-  color: #ffffff;
+  padding: var(--spacing-xs);
+  color: var(--color-white);
   font-weight: 600;
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius-sm);
   width: 280px;
   letter-spacing: 0.1rem;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-sm);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  font-size: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
-	background-color: rgba(255, 255, 255, 0.13);
-	backdrop-filter: blur(10px);
-	border: 1px rgb(255, 255, 255, 0.1) solid;
-  font-family: 'desc';
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-button);
+  background-color: var(--bg-glass-dark);
+  backdrop-filter: blur(10px);
+  border: 1px rgb(255, 255, 255, 0.1) solid;
+  font-family: var(--font-family-default);
 }
 
 .default-button:hover {
   background-color: #9400d36b;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .modal-overlay{
-  background-color: #00000050;
+  background-color: var(--bg-modal-overlay);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -313,14 +354,45 @@ html {
   overflow-y: auto;
 }
 
+.loading-overlay {
+  background-color: var(--bg-loading-overlay);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-overlay.active {
+  display: flex;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--bg-glass);
+  border-top: 6px solid var(--color-white);
+  border-radius: var(--border-radius-full);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .modal {
-  margin: 1rem;
+  margin: var(--spacing-md);
   width: 100%;
   max-width: 600px;
   height: auto;
   min-height: 300px;
-  background-color: #fff;
-  border-radius: .8rem;
+  background-color: var(--color-white);
+  border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -330,14 +402,14 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(15deg,#A85CF9,#5534A5,#4B7BE5,#6FDFDF);
-  padding: 1rem;
+  background: linear-gradient(15deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-4));
+  padding: var(--spacing-md);
 }
 
 .close-modal{
   text-decoration: none;
-  color: #000000;
-  font-size: 1.5rem;
+  color: var(--color-black);
+  font-size: var(--font-size-lg);
   transform: scale(0.7);
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -348,7 +420,7 @@ html {
 }
 
 .modal-body{
-  padding: .5rem 1rem;
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .modal-body div {
@@ -361,33 +433,33 @@ html {
 
 .modal-body div input, textarea{
   width: 100%;
-  padding: .5rem;
-  font-size: .8rem;
+  padding: var(--spacing-sm);
+  font-size: 0.8rem;
   outline: none;
   border: solid 1px #ccc;
-  margin-bottom: .4rem;
-  border-radius: .3rem;
+  margin-bottom: var(--spacing-xs);
+  border-radius: var(--border-radius-md);
   font-family: "arial";
 }
 
 .modal-body div button {
-  padding: .5rem;
+  padding: var(--spacing-sm);
   width: 30%;
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
   color: #000000be;
-  border-radius: .3rem;
+  border-radius: var(--border-radius-md);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
-	background-color: rgba(255, 255, 255, 0.13);
-	backdrop-filter: blur(10px);
-	border: 1px rgb(255, 255, 255, 0.1) solid;
-  font-family: 'desc';
+  box-shadow: var(--shadow-button);
+  background-color: var(--bg-glass-dark);
+  backdrop-filter: blur(10px);
+  border: 1px rgb(255, 255, 255, 0.1) solid;
+  font-family: var(--font-family-default);
 }
 
 .modal-body div button:hover{
   background-color: #ae00ffc0;
-  color: rgb(255, 255, 255);
+  color: var(--color-white);
 }
 
 .button-modal-create{
@@ -404,9 +476,9 @@ html {
 .Acoes__editar,
 .Acoes__deletar {
   border: none;
-  color: white;
+  color: var(--color-white);
   border-radius: 5px;
-  font-family: "desc";
+  font-family: var(--font-family-default);
   padding: 5px;
   max-width: 280px;
   text-align: center;
@@ -415,31 +487,31 @@ html {
   cursor: pointer;
   width: 48%;
   transition: all 0.3s ease-in-out;
-  margin-top: 1rem;
+  margin-top: var(--spacing-md);
 }
 
 .Acoes__editar {
-  box-shadow: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
-	background-color: rgba(17, 0, 255, 0.219);
-	backdrop-filter: blur(10px);
-	border: 1px rgb(255, 255, 255, 0.1) solid
+  box-shadow: var(--shadow-button);
+  background-color: var(--color-edit);
+  backdrop-filter: blur(10px);
+  border: 1px rgb(255, 255, 255, 0.1) solid;
 }
 
 .Acoes__editar:hover {
-  background-color: rgba(0, 0, 255, 0.425);
-  color: white;
+  background-color: var(--color-edit-hover);
+  color: var(--color-white);
 }
 
 .Acoes__deletar {
-  box-shadow: rgba(0, 0, 0, 0.541) 0px 7px 29px 0px;
-	background-color: #ff006a6c;
-	backdrop-filter: blur(10px);
-	border: 1px rgb(255, 255, 255, 0.1) solid
+  box-shadow: var(--shadow-button);
+  background-color: var(--color-delete);
+  backdrop-filter: blur(10px);
+  border: 1px rgb(255, 255, 255, 0.1) solid;
 }
 
 .Acoes__deletar:hover {
-  background-color: rgba(255, 0, 128, 0.74);
-  color: white;
+  background-color: var(--color-delete-hover);
+  color: var(--color-white);
 }
 
 @font-face {
